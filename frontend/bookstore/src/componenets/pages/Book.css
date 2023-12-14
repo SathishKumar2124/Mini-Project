@@ -1,0 +1,19 @@
+ul{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    text-align: center;
+    row-gap: 20px;
+}
+.cd {
+    padding: 10px;
+}
+ul div:hover{
+    background-color: rgb(241, 250, 250);
+}
+.avail{
+    color: rgb(6, 180, 6);
+}
+.unavail{
+    color: rgb(219, 25, 25);
+}

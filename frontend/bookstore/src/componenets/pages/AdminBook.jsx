@@ -1,0 +1,20 @@
+import React from 'react'
+import './AdminBook.css'
+
+
+const AdminBook = (props) => {
+    const {name,author,description,image,available} = props.book 
+  return (
+    <div className='cd'>
+        <img src={image} alt='name'  />
+        <article>By {author}</article>
+        <h3>{name}</h3>
+        <p>{description}</p>
+        <h2 className={available?"avail":"unavail"}>{available ? "available" : "unavailable"}</h2>
+        <button className='update'>Update</button>
+        <button className='delete'>Delete</button>
+    </div>
+  )
+}
+
+export default AdminBook
