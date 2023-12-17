@@ -6,6 +6,7 @@ import './App.css'
 import Admin from './componenets/pages/Admin'
 import AdminHome from './componenets/pages/AdminHome'
 import CreateBook from './componenets/pages/CreateBook'
+import UpdateBook from './componenets/pages/UpdateBook'
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
         <Route path='/admin' element={<Admin />} />
         <Route path='/adminhome' element={<AdminHome />} />
         <Route path='/addbook' element={<CreateBook />} />
+        <Route path= '/updatebook' element={<UpdateBook />} />
       </Routes>
       </div>
       

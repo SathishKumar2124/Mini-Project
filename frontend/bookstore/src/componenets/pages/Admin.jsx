@@ -19,7 +19,7 @@ const Admin = () => {
         <form onSubmit={(e) => e.preventDefault()}>
           <h1>Login</h1>
           <input type="text" onChange={(e) => setUsername(e.target.value)} placeholder='enter username' />
-          <input type="text" onChange={(e) => setPassword(e.target.value)} placeholder='enter password' />
+          <input type="password" onChange={(e) => setPassword(e.target.value)} placeholder='enter password' />
           <button onClick={() => handleLogin()}> login</button>
         </form>
         
