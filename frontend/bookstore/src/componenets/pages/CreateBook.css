@@ -1,0 +1,16 @@
+.true{
+    color: white;
+    height: 30px;
+    background-color:green;
+    font-size: 1.2rem;
+    width: 100px;
+    text-align: center;
+ }
+ .false{
+     color: white;
+     height: 30px;
+     background-color:rgb(255, 27, 27);
+     font-size: 1.2rem;
+     width: 110px;
+     text-align: center;
+  }

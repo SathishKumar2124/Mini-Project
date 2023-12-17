@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import {useNavigate} from 'react-router-dom'
+import './CreateBook.css'
 
 const CreateBook = () => {
   const [name,setName] = useState('')
@@ -31,6 +32,7 @@ const CreateBook = () => {
   return (
     <div>
       <form onSubmit={(e) => e.preventDefault()}>
+        <h1>Create Book</h1>
         <div>
           <input type="text" placeholder='name' onChange={(e) => setName(e.target.value)} />
         </div>
@@ -41,7 +43,7 @@ const CreateBook = () => {
           <input type="text"  placeholder='description' onChange={(e) => setDescription(e.target.value)}/>
         </div>
         <div>
-         <div onClick={()=>setAvailable(!available)}>{available ? "available" : "unavailable"}</div>
+         <div className={available ? "true" : "false"} onClick={()=>setAvailable(!available)}>{available ? "available" : "unavailable"}</div>
         </div>
         <div>
           <input type="text" placeholder='image'  onChange={(e) => setImage(e.target.value)}/>

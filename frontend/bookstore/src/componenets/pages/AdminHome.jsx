@@ -11,7 +11,6 @@ const AdminHome = () => {
         axios.get('http://localhost:3000/books')
         .then((response)=>setBooks(response.data))
         .catch(err=>console.log(err))
-        console.log(books)
     },[])
     return (
     <div  >

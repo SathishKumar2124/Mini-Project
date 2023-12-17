@@ -1,0 +1,15 @@
+.del-cont{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+    width: 500px;
+    margin-left: 30%;
+}
+
+.del-btn{
+    height: 40px;
+    width: 120px;
+    background-color: rgb(255, 32, 32);
+}

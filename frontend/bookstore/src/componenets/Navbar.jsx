@@ -8,7 +8,7 @@ const Navbar = () => {
     <div>
     <nav className="navbar bg-dark">
     <div className="container-fluid">
-        <a href='/'><h1>Library</h1></a>      
+        <a href='/'><h1>Book Checker</h1></a>      
     </div>
   </nav>
 
