@@ -7,8 +7,8 @@ const Book = (props) => {
     <div className='cd'>
         <img src={image} alt='name'  />
         <article>By {author}</article>
-        <h3>{name}</h3>
-        <p>{description}</p>
+        <h3 className='name'>{name}</h3>
+        <p >{description}</p>
         <h2 className={available?"avail":"unavail"}>{available ? "available" : "unavailable"}</h2>
     </div>
   )

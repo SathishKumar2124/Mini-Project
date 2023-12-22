@@ -14,7 +14,7 @@ const Home = () => {
     },[])
     return (
     <div  >
-        <ul className="cd">
+        <ul >
             {
                 books && books.map((book)=>(
                     <div className="cd" key={Math.random()*10}>
