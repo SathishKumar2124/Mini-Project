@@ -7,6 +7,7 @@ const UpdateBook = () => {
   const [name,setName] = useState('')
   const [author,setAuthor] = useState('')
   const [description,setDescription] = useState('')
+  const [takerId,setTakerId] = useState('')
   const [available,setAvailable] = useState()
   const[image,setImage] = useState('')
   const navigate = useNavigate()
@@ -20,6 +21,7 @@ const UpdateBook = () => {
     setName(response.data.name)
     setAuthor(response.data.author)
     setDescription(response.data.description)
+    setTakerId(response.data.takerId)
     setAvailable(response.data.available)
     setImage(response.data.image)
     setLoading(false)
@@ -32,6 +34,7 @@ const UpdateBook = () => {
       name ,
       author,
       description,
+      takerId,
       available,
       image,
     }
@@ -56,6 +59,9 @@ const UpdateBook = () => {
         </div>
         <div>
           <input  value={description} type="text"   onChange={ (e) => setDescription(e.target.value) }/>
+        </div>
+        <div>
+          <input  value={takerId} type="text" placeholder='takerId'  onChange={ (e) => setTakerId(e.target.value) }/>
         </div>
         <div>
          <div className={available ? "true" : "false"}  onClick={()=>setAvailable(!available)}>{available ? "available" : "unavailable"}</div>

@@ -25,10 +25,10 @@ const getbookbyId = async(req,res)=>{
 }
 
 const addBook = async(req,res) =>{
-    const {name,author,description,price,available,image} = req.body
+    const {name,author,description,takerId,available,image} = req.body
     try{
         const newbook = {
-            name:name,author:author,description:description,price:price,available:available,image:image
+            name:name,author:author,description:description,takerId:takerId,available:available,image:image
         }
         const book = Book.create(newbook)
         if(!book){
@@ -42,14 +42,14 @@ const addBook = async(req,res) =>{
 
 const updateBook = async (req, res, next) => { 
     const id = req.params.id;
-    const { name, author, description, price, available, image } = req.body;
+    const { name, author, description, takerId, available, image } = req.body;
     let book;
     try {
       book = await Book.findByIdAndUpdate(id, {
         name,
         author,
         description,
-        price,
+        takerId,
         available,
         image,
       });

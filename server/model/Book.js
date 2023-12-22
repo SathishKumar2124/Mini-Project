@@ -13,6 +13,9 @@ const bookSchema = new mongoose.Schema({
         type:String,
         required:true
     },
+    takerId:{
+        type:String
+    },
     available:{
         type:Boolean
     },
