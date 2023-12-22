@@ -10,19 +10,22 @@ const UpdateBook = () => {
   const [available,setAvailable] = useState()
   const[image,setImage] = useState('')
   const navigate = useNavigate()
+  const [loading,setLoading] = useState(false)
   const {id} = useParams()
   
-  useEffect(()=>{
+   useEffect(()=>{
+    setLoading(true)
     axios.get(`http://localhost:3000/books/${id}`)
     .then((response)=>{
     setName(response.data.name)
     setAuthor(response.data.author)
     setDescription(response.data.description)
+    setAvailable(response.data.available)
     setImage(response.data.image)
-
+    setLoading(false)
   })
     .catch(err=>console.log(err))
-  })
+  },[])
 
   const handleSubmit= () => {
     const data = {
@@ -32,31 +35,36 @@ const UpdateBook = () => {
       available,
       image,
     }
+    setLoading(true)
     axios.put(`http://localhost:3000/books/${id}`,data)
-    .then((response)=> navigate('/adminhome'))
+    .then((response)=> {
+      setLoading(false)
+      navigate('/adminhome')})
     .catch((err) => console.log(err))
   }
+ 
 
   return (
     <div>
         <form onSubmit={(e) => e.preventDefault()}>
+          <div><h1>Update Book</h1></div>
         <div>
-          <input value={name} type="text" placeholder='name' onChange={(e) => setName(e.target.value)} />
+          <input  type="text"  value={name} onChange={(e) => setName(e.target.value)} />
         </div>
         <div>
-          <input value={author} type="text" placeholder='author' onChange={(e) => setAuthor(e.target.value)} />
+          <input value={author} type="text"  onChange={(e) => setAuthor(e.target.value)} />
         </div>
         <div>
-          <input value={description} type="text"  placeholder='description' onChange={(e) => setDescription(e.target.value)}/>
+          <input  value={description} type="text"   onChange={ (e) => setDescription(e.target.value) }/>
         </div>
         <div>
          <div className={available ? "true" : "false"}  onClick={()=>setAvailable(!available)}>{available ? "available" : "unavailable"}</div>
         </div>
         <div>
-          <input value={image} type="text" placeholder='image'  onChange={(e) => setImage(e.target.value)}/>
+          <input value={image} type="text"   onChange={(e) => setImage(e.target.value)}/>
         </div>
         <button onClick={() => handleSubmit()}>submit</button>
-      </form>
+        </form>
     </div>
   )
 }
